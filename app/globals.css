@@ -1,21 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ededed;
+  --poppins: 'Poppins', sans-serif;
+  --roboto: 'Roboto', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.ImageInput {
+  @apply flex relative ;
+  
+  .inputButton {
+    @apply absolute z-[2] w-full h-full top-0 left-0 rounded-lg border border-[#ccc] before:w-full before:absolute before:top-0 before:left-0 before:h-full before:border-red-200 before:bg-slate-50;
+  }
+
+  
+} 
