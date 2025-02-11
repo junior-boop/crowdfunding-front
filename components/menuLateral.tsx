@@ -6,19 +6,19 @@ import { useEffect, useState } from "react"
 const navigation = [
     {
         titre : 'Decouvrer des projets',
-        url : '/'
+        url : '/d'
     },
     {
         titre : 'Mes projets',
-        url : '/projets'
+        url : '/d/projects'
     },
     {
         titre : 'Mes Contributions',
-        url : '/contribution'
+        url : '/d/contribution'
     },
     {
         titre : 'Mes Favories',
-        url : '/favories'
+        url : '/d/favories'
     },
 
 ]

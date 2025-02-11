@@ -15,8 +15,9 @@ export default function Login(){
             
             if(req.ok) {
                 const result = await req.json()
+                console.log(result)
                 if(result.statut === 1){
-                    cookiesStore.set('userToken', result.user.token)
+                    cookiesStore.set('userToken', result.token)
                     redirect('/')
                 }
 
@@ -29,8 +30,11 @@ export default function Login(){
         <div className="w-dvw h-screen flex items-center justify-center">
             <div className="w-full lg:w-[400px] ">
                 <div>
-                    <div className="text-2xl font-bold font-poppins mb-6 px-4">
+                    <div className="text-2xl font-bold font-poppins mb-4 px-4">
                         Se Connecter
+                    </div>
+                    <div className="mb-6 px-4 py-3 rounded-xl bg-red-100 text-red-900 border border-red-300">
+                        Soit le mot de passe ou le l{"'"}adresse email n{"'"}est pas correct 
                     </div>
                     <div className="mb-6">
                         <form action={handleAction} className="space-y-6">

@@ -1,9 +1,24 @@
+import { cookies } from "next/headers";
+import MenuFunction from "./MenuFunction";
 import Avatar from "./ui/avatar";
-import { Button_Round } from "./ui/button";
-import { FluentAdd24Filled, FluentAlertBadge24Regular } from "./ui/icones";
 import InputSearch from "./ui/inputsearch";
+import { LoginBtn } from "./loginState";
 
-export default function Header(){
+const getUserInformation = async (token : string) =>{
+    const request = await fetch(process.env.URL_SERVER + "/users/token?v="+token)
+    const data = await request.json()
+    return data
+} 
+
+export default async function Header(){
+    const cookiesStore = await cookies();
+  
+  const user = cookiesStore.get('userToken')
+
+  const data = await getUserInformation(user?.value)
+  const name:string = data.user.firstName;
+  const last:string = data.user.lastName;
+
     return (
         <header className="bg-white sticky top-0 left-0 right-0 z-10">
             <div className="lg:px-4 flex justify-between items-center lg:py-3">
@@ -18,13 +33,15 @@ export default function Header(){
                     <div>
                         <InputSearch />
                     </div>
-                    <Button_Round>
-                        <FluentAlertBadge24Regular className="h-6 w-6" />
-                    </Button_Round>
-                    <Button_Round>
-                        <FluentAdd24Filled className="h-6 w-6" />
-                    </Button_Round>
-                    <Avatar />
+                   <MenuFunction />
+                    <>
+                        {
+                            user 
+                            ? <Avatar userName={`${name.split(" ")[0]} ${last.split(' ')[0]}`} />
+                            : <LoginBtn />
+                        }
+                        
+                    </>
                 </div>
             </div>
             </div>

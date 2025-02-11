@@ -52,7 +52,7 @@ export default async function Signup(){
                         </form>
                     </div>
                     <div className=" px-4 font-roboto font-semibold">
-                        Si vous n{"'"}avez pas de compte, <Link href="/signup" className="text-blue-600 hover:underline">Créez un compte</Link>
+                        Si vous avez déjà un compte, cliquez sur <Link href="/login" className="text-blue-600 hover:underline">Se Connecter</Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,4 @@
-import Diapo from "@/components/diapo";
 import Header from "@/components/header";
-import MenuLaterale from "@/components/menuLateral";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accueil | FGM crowndfunding",
@@ -16,15 +14,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="relative">
         <Header />
-            <Diapo />
-            <section className="py-24">
-            <div className="flex max-w-[1280px] gap-14 mx-auto flex-shrink">
-              <div className="relative">
-                <MenuLaterale />
-              </div>
+            <div className="py-10">
               {children}
             </div>
-            </section>
       </body>
     </html>
   );

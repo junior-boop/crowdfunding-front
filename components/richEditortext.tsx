@@ -23,9 +23,6 @@ export default function RichEditor() {
         theme: 'snow',
         modules : modules
     });
-
-
-    editor.
     
   }, []);
 

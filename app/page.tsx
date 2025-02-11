@@ -1,18 +1,15 @@
-import MenuLaterale from "@/components/menuLateral";
-import ProjectCard from "@/components/projectCard";
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation';
+export default async function Home() {
+  const cookiesStore = await cookies();
+  
+  const user = cookiesStore.get('userToken')
 
-export default function Home() {
-  return (
-    <div className="flex max-w-[1280px] gap-14 mx-auto">
-      <div>
-        <MenuLaterale />
-      </div>
-      <div className="flex-1 lg:grid grid-cols-3 gap-6">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      </div>
-    </div>
-  );
+  // if(user){
+  //   redirect('/d')
+  // } else {
+  //   redirect('/signup')
+  // }
+
+  redirect('/d')
 }

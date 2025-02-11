@@ -15,7 +15,7 @@ export function MotDePasse({ onChange, value } : motDePasseProps){
             <input value={value} onChange={onChange} className="px-4 py-4 bg-slate-50 font-roboto text-base rounded-full block w-full" name="password" type={visible ? 'text' : 'password'} placeholder="Entrez votre password" />
             <button type="button" onClick={() => setVisible(!visible)} className="absolute top-12 right-4 cursor-pointer">
                 {
-                    visible ? <FluentEye24Filled className="h-6 w-6" /> : <FluentEyeOff24Filled className="h-6 w-6" />
+                    !visible ? <FluentEye24Filled className="h-6 w-6" /> : <FluentEyeOff24Filled className="h-6 w-6" />
                 }
             </button>
         </div>
