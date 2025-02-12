@@ -1,10 +1,10 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css'; // for snow theme
 
-export default function RichEditor() {
-  const [value, setValue] = useState('');
+export default function RichEditor({ placeholder, name }:{ placeholder : string, name : string}) {
+  const editorRef = useRef()
 
   const modules = {
     toolbar: [
@@ -20,11 +20,18 @@ export default function RichEditor() {
 
    useEffect(() => {
     const editor = new Quill('#editor', {
+        placeholder : placeholder,
         theme: 'snow',
         modules : modules
     });
+
+    editorRef.current = editor.getSemanticHTML() ;
     
   }, []);
 
-  return (<div id="editor"></div>)
+
+  return (<>
+    <textarea className='hidden' name={name} value={editorRef.current as string}></textarea>
+    <div id="editor"></div>
+  </>)
 }

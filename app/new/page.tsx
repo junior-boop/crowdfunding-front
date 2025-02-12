@@ -1,9 +1,9 @@
-// import RichEditor from "@/components/richEditortext";
+import RichEditor from "@/components/richEditortext";
 import Container from "@/components/ui/container";
 // import { LineMdConfirmCircle, LucideSave, SvgSpinners8DotsRotate } from "@/components/ui/icones";
 import { InputImage_2 } from "@/components/ui/inputImage";
 import { InputText_2 } from "@/components/ui/inputText";
-import TextArea, { TextArea_2 } from "@/components/ui/textArea";
+import TextArea, { TextArea_WithRichEditor } from "@/components/ui/textArea";
 
 export default function ProjectNew(){
     
@@ -19,7 +19,7 @@ export default function ProjectNew(){
                         <div className="flex-1 space-y-4">
                             {/* <InputVideo_2 duration={(value: number) => setDuration(value)} /> */}
                             <TextArea label="Titre du projet" name="title" placeholder="Type your title here" />
-                            <TextArea label="Description" name="desc" placeholder="Type the description here" />
+                            <TextArea_WithRichEditor label="Description" name="desc" placeholder="Descrivez votre projet" />
                             {/* <button className="w-full h-[52px] bg-vert text-black font-bold mt-4 flex items-center justify-center gap-3" disabled={disabled}>
                                 {
                                     !upload
