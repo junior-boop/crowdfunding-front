@@ -16,8 +16,13 @@ export default async function Header(){
   const user = cookiesStore.get('userToken')
 
   const data = await getUserInformation(user?.value)
-  const name:string = data.user.firstName;
-  const last:string = data.user.lastName;
+    let name:string
+    let last:string
+    
+  if(user !== undefined) {
+    name = data.user.firstName;
+    last = data.user.lastName;
+  }
 
     return (
         <header className="bg-white sticky top-0 left-0 right-0 z-10">

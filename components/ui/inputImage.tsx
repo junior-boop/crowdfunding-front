@@ -110,9 +110,9 @@ export function InputImage_2({ url }: InputImageProps) {
                 <div className="image">
                     <img ref={image} src="/images.png" alt="" />
                 </div>
-                <button className="savebtn">
+                {/* <button className="savebtn">
                     <LucideSave className="w-6 h-6 text-vert" />
-                </button>
+                </button> */}
             </div>
             <div className="flex gap-4">
                 <LucideImage className="w-6 h-6" />
