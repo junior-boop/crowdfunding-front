@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css'; // for snow theme
 
+
+
 export default function RichEditor({ placeholder, name }:{ placeholder : string, name : string}) {
   const editorRef = useRef()
 
@@ -26,7 +28,8 @@ export default function RichEditor({ placeholder, name }:{ placeholder : string,
     });
 
     editorRef.current = editor.getSemanticHTML() ;
-    
+
+    return () => editor.disable() 
   }, []);
 
 

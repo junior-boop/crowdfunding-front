@@ -2,8 +2,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react"
-import { LucideSave, SvgSpinners8DotsRotate } from "./icones"
-import RichEditor from "../richEditortext"
+import { LucideSave } from "./icones"
+import dynamic from 'next/dynamic';
+const RichEditor = dynamic(() => import("../richEditortext"), {
+  loading: () => <p>Loading...</p>, ssr : false
+})
 
 
 type TextAreaProps = {
